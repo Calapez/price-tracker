@@ -1,4 +1,4 @@
-#Price Tracker
+# Price Tracker
 
 Price Tracker is an application to find promotions in online stores.
 For now the application only works with the Worten website.
@@ -15,6 +15,7 @@ pip install scrapy
 ## Usage
 If you want to filter the search, write the keywords you wish to include and/or exclude from the search in the respective files. The keywords must be separated by a newline.
 
+To run the program use the following command.
 ```bash
 scrapy runspider
 ```
