@@ -9,6 +9,7 @@ from util import parse_int_or_null
 from scrapy import signals
 from scrapy import Spider
 
+headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0'}
 WANTED_KW_PATH = 'wanted_keywords.txt'
 UNWANTED_KW_PATH = 'unwanted_keywords.txt'
 now_format = datetime.datetime.now().strftime("%Y-%m-%d %H_%M")
@@ -74,7 +75,8 @@ class WortenSpider(Spider):
             if next_page:
                 yield scrapy.Request(
                     response.urljoin(next_page),
-                    callback=self.parse
+                    callback=self.parse,
+					headers=headers
                 )
 
     # Crawl Ended
